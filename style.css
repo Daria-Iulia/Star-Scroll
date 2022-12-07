@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Overlock&display=swap");
+:root {
+  --font-size-body: clamp(1.31rem, calc(1rem + 0.37vw), 1.5rem);
+  --font-size-h2: clamp(1.73rem, calc(1rem + 2.35vw), 2.93rem);
+  --font-size-h1: clamp(2.07rem, calc(1rem + 3.1vw), 3.66rem);
+
+  --purple: #5f3dc4;
+  --lightpurple: #9775fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(160deg, #5c00e9 0%, #8082d0 100%);
+
+  font-family: "Overlock", cursive;
+  font-size: var(--font-size-body);
+  padding-block: 1rem;
+  background-size: cover;
+}
+
+h2,
+.font-size-h2 {
+  font-size: var(--font-size-h2);
+}
+
+h1,
+.font-size-h1 {
+  font-size: var(--font-size-h1);
+}
+
+.container {
+  max-width: 80ch;
+  container-type: inline-size;
+  width: min(var(--max-width), 100% - 3rem);
+  margin-inline: auto;
+  font-family: "Overlock", cursive;
+}
+
+.card {
+  display: grid;
+  background: #e1d9fb;
+  grid-template-areas: "image content content";
+  margin-inline: auto;
+  margin-block-start: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: "Overlock", cursive;
+}
+.card img {
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.card section {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  padding: 1rem;
+  font-family: "Overlock", cursive;
+  color: var(--purple);
+}
+.card section > * {
+  margin-block: 0;
+}
+.card section > * + * {
+  margin-block-start: 1rem;
+}
+.card section p {
+  line-height: 1.5;
+  color: var(--lightpurple);
+}
